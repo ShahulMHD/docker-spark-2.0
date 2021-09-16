@@ -1,0 +1,14 @@
+FROM spark-base-3.0.2
+
+
+ENV SPARK_MASTER_PORT 7077
+ENV SPARK_MASTER_WEBUI_PORT 8080
+ENV SPARK_MASTER_LOG /spark/logs
+
+EXPOSE 8080 7077 6066
+
+# WORKDIR ${APP}
+
+#CMD ["/bin/bash", "/master.sh"]
+
+ENTRYPOINT $SPARK_HOME/bin/spark-class org.apache.spark.deploy.master.Master

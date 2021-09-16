@@ -1,16 +1,11 @@
  # Builds images
-   docker build \
-   -f base.Dockerfile \
-   -t spark-base-3.0.2 .
+   docker build -f Dockerfile_base -t spark-base-3.0.2 .
+   docker build -f Dockerfile_master -t spark-master .
+   docker build -f Dockerfile_worker -t spark-worker .
 
-   docker build \
-   -f master.Dockerfile \
-   -t spark-master .
 
-   docker build \
-   -f worker.Dockerfile \
-   -t spark-worker .
-
-   docker build \
-   -f jupyter.Dockerfile \
-   -t spark-jupyter .
+   
+# docker build -t spark-base-3.0.2 .
+# docker build -t spark-master .
+# docker build -t spark-worker .
+# docker build -t spark-jupyter .
